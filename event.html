@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Pre-Opening – The Crazy Candy Store</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700&family=Bebas+Neue&display=swap');
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#060010;--ink2:#0c0022;
+  --pp:#ae3dff;--pp2:#d080ff;
+  --pk:#ff1a8c;--pk2:#ff6cbf;
+  --wh:#f4eeff;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--wh);font-family:'Outfit',sans-serif;overflow-x:hidden;cursor:none;min-height:100vh;display:flex;flex-direction:column}
+#dot{position:fixed;width:9px;height:9px;border-radius:50%;background:var(--pk);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;box-shadow:0 0 12px var(--pk)}
+#ring{position:fixed;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(174,61,255,.5);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .09s,top .09s,width .2s,height .2s,border-color .2s}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:800;display:flex;align-items:center;justify-content:space-between;padding:.85rem 3rem;background:rgba(6,0,16,.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(174,61,255,.15)}
+.nav-logo img{height:6rem;filter:drop-shadow(0 0 10px rgba(174,61,255,.65));transition:filter .3s;cursor:pointer;display:block}
+.nav-logo img:hover{filter:drop-shadow(0 0 18px rgba(255,26,140,.8))}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{display:block;padding:.55rem 1.25rem;font-size:.82rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:rgba(244,238,255,.5);text-decoration:none;transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-1px;left:1.25rem;right:1.25rem;height:2px;background:var(--pk);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover{color:var(--wh)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.active{color:var(--pk2)}
+.nav-links a.active::after{transform:scaleX(1);background:var(--pk2)}
+.nav-cta{padding:.6rem 1.5rem;background:var(--pk);color:#fff;border:none;border-radius:3px;font-family:'Outfit',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .3s;box-shadow:0 2px 20px rgba(255,26,140,.35)}
+.nav-cta:hover{background:var(--pk2);transform:translateY(-1px);box-shadow:0 6px 28px rgba(255,26,140,.5)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:901}
+.burger span{width:24px;height:2px;background:var(--pp2);display:block;transition:all .3s}
+.burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* BUTTONS */
+.btn-fill{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2.2rem;background:var(--pk);color:#fff;border:none;border-radius:3px;font-family:'Outfit',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .3s;box-shadow:0 4px 28px rgba(255,26,140,.38)}
+.btn-fill:hover{background:var(--pk2);transform:translateY(-2px);box-shadow:0 8px 38px rgba(255,26,140,.55)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2.2rem;background:transparent;color:var(--pp2);border:1.5px solid var(--pp);border-radius:3px;font-family:'Outfit',sans-serif;font-weight:600;font-size:.88rem;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .3s}
+.btn-ghost:hover{background:rgba(174,61,255,.15);border-color:var(--pp2);transform:translateY(-2px)}
+
+/* SECTION HELPERS */
+.sec-tag{display:flex;align-items:center;gap:.7rem;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pk);font-weight:600}
+.sec-tag::before{content:'';width:28px;height:1.5px;background:var(--pk);flex-shrink:0}
+.sec-title{font-family:'Anton',sans-serif;font-size:clamp(2.8rem,5.5vw,5rem);line-height:.93;text-transform:uppercase;color:#fff}
+.sec-title em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--pp2)}
+
+/* FOOTER */
+footer{background:#04000c;border-top:1px solid rgba(174,61,255,.12);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:auto}
+.f-logo img{height:6rem;opacity:1;filter:drop-shadow(0 0 8px rgba(174,61,255,.5))}
+.f-nav{display:flex;gap:1.8rem;list-style:none}
+.f-nav a{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,238,255,.3);text-decoration:none;transition:color .2s}
+.f-nav a:hover{color:var(--pk2)}
+.f-copy{font-size:.7rem;color:rgba(244,238,255,.2);letter-spacing:.04em}
+
+/* MOBILE */
+@media(max-width:860px){
+  nav{padding:.85rem 1.4rem}
+  .nav-links{position:fixed;inset:0;background:rgba(6,0,16,.97);flex-direction:column;justify-content:center;align-items:center;gap:.5rem;display:none;backdrop-filter:blur(20px);z-index:799}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:1.1rem;padding:.9rem 2rem}
+  .nav-cta{display:none}
+  .burger{display:flex}
+  footer{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}
+}
+
+.ev-hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.ev-bg{position:absolute;inset:0;background:url('images/4.jpeg') top/cover no-repeat;filter:brightness(.25) saturate(1.6) hue-rotate(10deg)}
+.ev-grad{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(174,61,255,.25) 0%,transparent 60%),linear-gradient(180deg,rgba(6,0,16,.35) 0%,rgba(6,0,16,.5) 55%,rgba(6,0,16,1) 100%)}
+.ev-inner{position:relative;z-index:2;padding:5rem 2rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;max-width:820px}
+.ev-kicker{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.4em;color:var(--pp2)}
+.ev-title{font-family:'Anton',sans-serif;font-size:clamp(3.5rem,10vw,9rem);line-height:.87;text-transform:uppercase;color:#fff}
+.ev-title .ol{color:transparent;-webkit-text-stroke:2.5px var(--pk);display:block}
+.date-block{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(174,61,255,.25);backdrop-filter:blur(14px);border-radius:4px;padding:2rem 3rem;width:100%;max-width:640px;margin:.8rem 0}
+.db-item{display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:0 2rem}
+.db-lbl{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pp2);font-weight:600}
+.db-val{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.06em;color:#fff;line-height:1}
+.db-div{width:1px;height:3.5rem;background:rgba(174,61,255,.2)}
+.ev-desc{font-size:1.05rem;color:rgba(244,238,255,.62);max-width:520px;line-height:1.8;font-weight:300}
+.tags{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.etag{padding:.38rem 1rem;border:1px solid rgba(174,61,255,.3);border-radius:2px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pp2);background:rgba(174,61,255,.08)}
+.ev-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.detail-section{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(174,61,255,.1)}
+.ds-left{padding:4.5rem 3.5rem;display:flex;flex-direction:column;gap:2rem;border-right:1px solid rgba(174,61,255,.1)}
+.ds-right{position:relative;overflow:hidden;min-height:480px;background:var(--ink2)}
+.ds-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:saturate(1.4)}
+.ds-right-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,0,16,.7) 0%,transparent 55%)}
+.info-list{display:flex;flex-direction:column}
+.ir{display:flex;gap:1.2rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(174,61,255,.1)}
+.ir:last-child{border-bottom:none}
+.ir-ico{font-size:1.4rem;flex-shrink:0;margin-top:.1rem;filter:drop-shadow(0 0 6px rgba(255,26,140,.4))}
+.ir-body{display:flex;flex-direction:column;gap:.2rem}
+.ir-lbl{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pp2);font-weight:600}
+.ir-val{font-weight:600;font-size:.97rem;color:var(--wh)}
+.ir-sub{font-size:.79rem;color:rgba(244,238,255,.42);margin-top:.05rem}
+@media(max-width:860px){
+  .date-block{grid-template-columns:1fr;padding:1.5rem}
+  .db-div{display:none}
+  .db-item{padding:.5rem 0}
+  .detail-section{grid-template-columns:1fr}
+  .ds-right{min-height:260px;border-right:none;border-top:1px solid rgba(174,61,255,.1)}
+  .ds-left{padding:3rem 1.5rem;border-right:none}
+}
+</style>
+</head>
+<body>
+<div id="dot"></div><div id="ring"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="images/logo-transparent-png.png" alt="The Crazy Candy Store"/></a>
+  <ul class="nav-links" id="nav-links"><li><a href="index.html"  onclick="closeNav()">Hem</a></li>
+<li><a href="sortiment.html"  onclick="closeNav()">Sortiment</a></li>
+<li><a href="event.html" class="active" onclick="closeNav()">Pre-Opening</a></li>
+<li><a href="om-oss.html"  onclick="closeNav()">Om Oss</a></li>
+<li><a href="hitta-oss.html"  onclick="closeNav()">Hitta Oss</a></li></ul>
+  <a class="nav-cta" href="hitta-oss.html">Hitta Oss ✦</a>
+  <div class="burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="ev-hero">
+  <div class="ev-bg"></div><div class="ev-grad"></div>
+  <div class="ev-inner">
+    <div class="ev-kicker">Friends &amp; Family · Happy Hour</div>
+    <h1 class="ev-title">Pre&#8209;<span class="ol">Opening</span>Event</h1>
+    <div class="date-block">
+      <div class="db-item"><div class="db-lbl">Datum</div><div class="db-val">Lördag<br/>6 Juni</div></div>
+      <div class="db-div"></div>
+      <div class="db-item"><div class="db-lbl">Tid</div><div class="db-val">Kl<br/>11 EM</div></div>
+      <div class="db-div"></div>
+      <div class="db-item"><div class="db-lbl">Special</div><div class="db-val">Gratis<br/>Dryck</div></div>
+    </div>
+    <p class="ev-desc">Fira öppningen med oss – vänner och familj välkomna till en kväll med gratis dricka, massor av godis och en riktigt crazy stämning!</p>
+    <div class="tags">
+      <span class="etag">Gratis Dryck</span><span class="etag">Lösgodis</span><span class="etag">Kulglass</span><span class="etag">Slush</span><span class="etag">Gratis WiFi</span>
+    </div>
+    <div class="ev-actions">
+      <a class="btn-fill" href="hitta-oss.html">Hitta Hit</a>
+      <a class="btn-ghost" href="sortiment.html">Se Sortiment</a>
+    </div>
+  </div>
+</section>
+<div class="detail-section">
+  <div class="ds-left">
+    <div><div class="sec-tag">Eventinfo</div><h2 class="sec-title" style="font-size:clamp(2rem,4vw,3.2rem);margin-top:.7rem">Vad händer<br/><em>den 6 Juni?</em></h2></div>
+    <div class="info-list">
+      <div class="ir"><span class="ir-ico">📅</span><div class="ir-body"><div class="ir-lbl">När</div><div class="ir-val">Lördag 6 Juni 2026</div><div class="ir-sub">Eventet startar kl 11 EM</div></div></div>
+      <div class="ir"><span class="ir-ico">📍</span><div class="ir-body"><div class="ir-lbl">Var</div><div class="ir-val">Eriksgatan 18, Enköping</div><div class="ir-sub">Bara 25 meter bort – följ skylten!</div></div></div>
+      <div class="ir"><span class="ir-ico">🥤</span><div class="ir-body"><div class="ir-lbl">Erbjudande</div><div class="ir-val">Gratis dryck till alla gäster</div><div class="ir-sub">Friends &amp; Family Happy Hour</div></div></div>
+      <div class="ir"><span class="ir-ico">🛍️</span><div class="ir-body"><div class="ir-lbl">Grand Opening</div><div class="ir-val">6 Juni 2026</div><div class="ir-sub">Officiell öppning för alla!</div></div></div>
+    </div>
+    <a class="btn-fill" href="hitta-oss.html">Se Adress &amp; Öppettider →</a>
+  </div>
+  <div class="ds-right">
+    <img src="images/1.jpeg" alt="Pre-opening affisch"/>
+    <div class="ds-right-ov"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="f-logo"><img src="images/logo-transparent-png.png" alt="The Crazy Candy Store"/></div>
+  <ul class="f-nav">
+    <li><a href="index.html">Hem</a></li>
+    <li><a href="sortiment.html">Sortiment</a></li>
+    <li><a href="event.html">Pre-Opening</a></li>
+    <li><a href="om-oss.html">Om Oss</a></li>
+    <li><a href="hitta-oss.html">Hitta Oss</a></li>
+  </ul>
+  <div class="f-copy">© 2026 The Crazy Candy Store · Eriksgatan 18 · Enköping</div>
+</footer>
+<script>
+const dot=document.getElementById('dot'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
+function toggleNav(){document.querySelector('.burger').classList.toggle('on');document.querySelector('.nav-links').classList.toggle('open')}
+function closeNav(){document.querySelector('.burger').classList.remove('on');document.querySelector('.nav-links').classList.remove('open')}
+</script>
+</body>
+</html>
