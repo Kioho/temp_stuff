@@ -80,6 +80,7 @@ questions here.
 | 2026-05-01 | Add founder vision content to `om-oss.html` as part of the existing values section. | Requested copy came from `vision.md`; photo placeholders were omitted until real founder or vision assets exist. |
 | 2026-05-01 | Keep the bottom CTA on `om-oss.html` focused on the store location. | Removed the secondary `Pre-Opening Event` link while keeping `Kom förbi på Torggatan 20` and `Hitta Hit`. |
 | 2026-05-01 | Remove the `5.jpeg` story image from `om-oss.html` and keep that page's story section text-only. | Requested cleanup for the About page; `5.jpeg` still appears on other pages where referenced. |
+| 2026-05-01 | Update `sortiment.html` prices and menu copy for launch-facing accuracy. | Removed the larger lösgodis price styling, added smaller `FRÅN` prefixes, updated Kulglass and Monster Energy pricing, added Läsk, and revised the Asian Noodles description. |
 | TBD | Keep the site as plain HTML/CSS/JavaScript unless a framework or CMS is explicitly requested. | Matches the current project structure and build setup. |
 | TBD | Keep CSS and JavaScript inline until shared asset extraction is planned as a dedicated refactor. | Avoids mixing feature work with broad mechanical changes. |
 
