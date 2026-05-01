@@ -93,10 +93,10 @@ footer{background:rgba(4,0,12,.9);border-top:1px solid rgba(174,61,255,.12);padd
 .mi-l{display:flex;flex-direction:column;gap:.15rem}
 .mi-name{font-weight:600;font-size:.97rem;color:var(--wh);transition:color .25s}
 .mi-desc{font-size:.77rem;color:rgba(244,238,255,.4)}
-.mi-price{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.04em;color:var(--pp2);white-space:nowrap;flex-shrink:0}
+.mi-price{position:relative;font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.04em;color:var(--pp2);white-space:nowrap;flex-shrink:0}
 .mi-price-from{font-size:.5em}
 .mi-price.big{color:var(--pk);font-size:2.3rem;text-shadow:0 0 20px rgba(255,26,140,.4)}
-.mi-price sub{font-size:1rem;color:rgba(208,128,255,.6);vertical-align:baseline}
+.mi-price sub{position:absolute;left:calc(100% + .12rem);bottom:.2rem;font-size:1rem;line-height:1;color:rgba(208,128,255,.6)}
 .free-note{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;background:rgba(255,26,140,.1);border:1px solid rgba(255,26,140,.25);border-radius:3px;font-size:.8rem;color:var(--pk2);font-weight:500;margin-top:.5rem}
 .sb{padding:3.5rem 2.5rem;display:flex;flex-direction:column;gap:1.8rem;background:var(--ink2)}
 .sb-img{border-radius:6px;overflow:hidden;border:1px solid rgba(174,61,255,.2);box-shadow:0 0 40px rgba(174,61,255,.12);transition:box-shadow .4s}
@@ -155,7 +155,7 @@ footer{background:rgba(4,0,12,.9);border-top:1px solid rgba(174,61,255,.12);padd
       <div class="mi"><div class="mi-l"><div class="mi-name">American Pan Pizza</div><div class="mi-desc">Krispig och god – perfekt mellanmål</div></div><div class="mi-price">29:–</div></div>
     </div>
     <div class="cat-block">
-      <div class="cat-hd"><span class="cat-ico">📶</span><div class="cat-name">Extra</div></div>
+      <div class="cat-hd"><span class="cat-ico">🏃</span><div class="cat-name">Aktiviteter</div></div>
       <div class="free-note">✦ Gratis WiFi – häng så länge du vill!</div>
     </div>
   </div>

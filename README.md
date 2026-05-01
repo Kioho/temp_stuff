@@ -49,6 +49,23 @@ npm run format
 Checks or applies Prettier formatting to the HTML files. Formatting the current
 pages creates a large mechanical diff, so apply it intentionally.
 
+## Branch Workflow
+
+- Use `Development` as the active working and integration branch.
+- Create feature branches from `Development`.
+- Open pull requests against `Development`.
+- Update `main` by merging `Development` when the live/default GitHub branch
+  should be refreshed.
+
+## Documentation Workflow
+
+- Update relevant project documents after implementation work.
+- Use `PROJECT_PLAN.md` for completed changes, decisions, backlog items, and
+  launch-readiness notes.
+- Update `README.md` for setup, command, structure, or user-facing project
+  behavior changes.
+- Update `AGENTS.md` for coding-agent workflow and repository convention changes.
+
 ## Project Structure
 
 - `index.html` - Homepage

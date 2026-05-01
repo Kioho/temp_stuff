@@ -26,6 +26,24 @@ Use `npm run check` and `npm run build` before finishing code or content changes
 Use `npm run format:check` only when formatting is relevant. Do not run
 `npm run format` as an incidental cleanup because it rewrites all source pages.
 
+## Documentation Updates
+
+- After each implementation, update relevant project documents before finishing.
+- Use `PROJECT_PLAN.md` for completed decisions, launch-readiness notes, and
+  backlog/status updates.
+- Update `README.md` when setup, commands, structure, or user-facing project
+  behavior changes.
+- Update `AGENTS.md` when workflow, coding guidance, or repository conventions
+  change.
+
+## Branch Workflow
+
+- Use `Development` as the working and integration branch.
+- Create task branches from `Development`.
+- Open pull requests against `Development`.
+- Merge `Development` into `main` only when the live/default branch should be
+  updated.
+
 ## Editing Guidance
 
 - Preserve the existing visual direction unless the user asks for a redesign.
