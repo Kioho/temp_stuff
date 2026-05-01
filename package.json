@@ -1,0 +1,22 @@
+{
+  "name": "the-crazy-candy-store-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "check": "npm run check:html",
+    "lint": "npm run check:html",
+    "check:html": "htmlhint \"*.html\"",
+    "format": "prettier --write \"*.html\"",
+    "format:check": "prettier --check \"*.html\""
+  },
+  "devDependencies": {
+    "htmlhint": "^1.9.2",
+    "prettier": "^3.8.3",
+    "vite": "^8.0.10"
+  }
+}
