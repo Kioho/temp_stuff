@@ -101,6 +101,18 @@ footer{background:rgba(4,0,12,.9);border-top:1px solid rgba(174,61,255,.12);padd
 .vc-ico{font-size:2rem;filter:drop-shadow(0 0 8px rgba(255,26,140,.4))}
 .vc-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.08em;color:var(--pp2)}
 .vc-desc{font-size:.84rem;color:rgba(244,238,255,.48);line-height:1.65}
+.founder-vision{margin-top:.5rem;padding-top:3.8rem;border-top:1px solid rgba(174,61,255,.14);display:grid;grid-template-columns:minmax(230px,.78fr) minmax(0,1.22fr);gap:2.4rem 3.2rem;align-items:start}
+.vision-head{position:sticky;top:9rem;display:flex;flex-direction:column;gap:1.5rem}
+.vision-lead{font-size:1.02rem;color:rgba(244,238,255,.72);line-height:1.85;font-weight:300;max-width:36rem}
+.vision-panel{display:flex;flex-direction:column;gap:1.5rem}
+.vision-label{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pk2)}
+.founder-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;background:rgba(174,61,255,.11)}
+.founder-card,.vision-story{background:linear-gradient(135deg,rgba(12,0,34,.98),rgba(32,0,62,.88));border:1px solid rgba(174,61,255,.09);padding:2.2rem;box-shadow:0 18px 70px rgba(0,0,0,.22)}
+.founder-card{display:flex;flex-direction:column;gap:1rem;min-height:100%}
+.founder-name{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:#fff}
+.founder-card p,.vision-story p{font-size:.9rem;color:rgba(244,238,255,.6);line-height:1.75;font-weight:300}
+.vision-story{display:flex;flex-direction:column;gap:1rem;border-color:rgba(255,26,140,.13);background:linear-gradient(135deg,rgba(174,61,255,.12),rgba(255,26,140,.07) 45%,rgba(12,0,34,.96))}
+.vision-story p:first-of-type{font-size:1rem;color:rgba(244,238,255,.74)}
 .cta-banner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;padding:3.8rem 3.5rem;background:linear-gradient(135deg,rgba(174,61,255,.1) 0%,rgba(255,26,140,.07) 100%);border-top:1px solid rgba(174,61,255,.12)}
 .cta-banner h3{font-family:'Anton',sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);text-transform:uppercase;line-height:.95;color:#fff}
 .cta-banner h3 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--pk2)}
@@ -116,6 +128,10 @@ footer{background:rgba(4,0,12,.9);border-top:1px solid rgba(174,61,255,.12);padd
   .vals{padding:3rem 1.5rem}
   .vals-grid{grid-template-columns:1fr}
   .vc{border-right:none;border-bottom:1px solid rgba(174,61,255,.08)}
+  .founder-vision{grid-template-columns:1fr;padding-top:3rem;gap:2rem}
+  .vision-head{position:static}
+  .founder-grid{grid-template-columns:1fr}
+  .founder-card,.vision-story{padding:1.8rem 1.4rem}
   .cta-banner{grid-template-columns:1fr;padding:3rem 1.5rem}
 }
 </style>
@@ -155,7 +171,7 @@ footer{background:rgba(4,0,12,.9);border-top:1px solid rgba(174,61,255,.12);padd
 <div class="story">
   <div class="story-txt">
     <div><div class="sec-tag">Mer än godis</div><h2 class="sec-title" style="font-size:clamp(2rem,4vw,3.2rem);margin-top:.7rem">En plats<br/><em>att vara på</em></h2></div>
-    <p>Vi öppnar på Eriksgatan 18 i Enköping med ett klart mål: att skapa den roligaste och mest välkomnande godisbutiken i stan.</p>
+    <p>Vi öppnar på Torggatan 20 i Enköping med ett klart mål: att skapa den roligaste och mest välkomnande godisbutiken i stan.</p>
     <p>Hos oss hittar du godis från Sverige, USA, Japan, Sydkorea och hela resten av världen. 250+ sorters lösgodis – fyll påsen precis som du vill och betala per kilo.</p>
     <p>Men det är inte bara godiset. Gratis WiFi, mysig stämning och personal som genuint tycker om att ha dig där.</p>
     <a class="btn-ghost" href="event.html">Pre-Opening 6 Juni</a>
@@ -168,9 +184,39 @@ footer{background:rgba(4,0,12,.9);border-top:1px solid rgba(174,61,255,.12);padd
     <div class="vc"><div class="vc-ico">💜</div><div class="vc-title">Välkomnande</div><div class="vc-desc">Alla är välkomna – oavsett ålder, stil eller hur länge du stannar. Ta med hela gänget!</div></div>
     <div class="vc"><div class="vc-ico">⚡</div><div class="vc-title">Stämning</div><div class="vc-desc">Gratis WiFi, bra musik och en butik som faktiskt är rolig att vara i.</div></div>
   </div>
+  <div class="founder-vision">
+    <div class="vision-head">
+      <div><div class="sec-tag">Från idé till mötesplats</div><h2 class="sec-title" style="font-size:clamp(2rem,4vw,3rem);margin-top:.7rem">Grundarnas<br/><em>vision</em></h2></div>
+      <p class="vision-lead">The Crazy Candy Store grundas av två värmländska barndomsvänner med en gemensam vision: att skapa en helt unik godisbutik i Enköping — en plats som inte bara handlar om godis, utan om upplevelse, gemenskap och känslan av att kliva in i något nytt.</p>
+    </div>
+    <div class="vision-panel">
+      <div class="vision-label">Grundarna</div>
+      <div class="founder-grid">
+        <article class="founder-card">
+          <div class="founder-name">Robin</div>
+          <p>Robin är en riktig idéspruta med sina rötter i restaurangbranschen. Fart och fläkt är hans signum, och hans filosofi är ofta: hellre fort och fel än att stå still. Han tror själv att han är 25, men sanningen är nästan det dubbla.</p>
+          <p>Hela konceptet kring The Crazy Candy Store föddes från början ur Robins idé — en vision om att skapa något som Sverige inte riktigt har sett tidigare.</p>
+        </article>
+        <article class="founder-card">
+          <div class="founder-name">Patrik</div>
+          <p>Patrik är piloten som har svårt att sitta still. Han har fler järn i elden än de flesta och drivs av nya idéer, rörelse och möjligheter. Tillsammans med Robin vill han skapa en butik som sticker ut, överraskar och blir en naturlig mötesplats för människor i alla åldrar.</p>
+        </article>
+      </div>
+      <div class="vision-story">
+        <div class="vision-label">Visionen</div>
+        <p>Vår vision är att skapa en trendig och lekfull mötesplats där människor i alla åldrar kan samlas av olika anledningar — för att köpa godis, umgås, äta något gott, upptäcka nya smaker eller bara uppleva en miljö som känns annorlunda.</p>
+        <p>Det ska vara nytt, spännande och fyllt av energi. När man kliver innanför dörrarna till The Crazy Candy Store ska man mötas av en wow-upplevelse.</p>
+        <p>Vi vill skapa en innovativ godisbutik med tydliga influenser från USA och Asien. Inredningen ska vara lekfull, färgstark och inspirerad av graffiti, fantasy och underground-kultur. Kombinationen av design, atmosfär och utbud ska göra butiken till något helt unikt i Sverige.</p>
+        <p>Utbudet kommer till största delen att bestå av lösgodis, men även trendigt godis från USA och Asien — smaker och produkter som ligger helt rätt i tiden. Utöver godis kommer det också att finnas ett mindre sortiment av gosedjur, nyckelringar och dockor i en trendig asiatisk anda.</p>
+        <p>Butiken kommer även att ha en community-yta där man kan sitta ner, äta och umgås. På menyn kommer det bland annat att finnas American Pan Pizza och Asian Noodles. Vi kommer även att servera glass och slush till förmånliga priser.</p>
+        <p>För att förstärka känslan av mötesplats vill vi också skapa en aktivitetsarena med exempelvis biljard, air hockey och andra roliga inslag som gör att besöket blir mer än bara ett snabbt stopp i en butik.</p>
+        <p>Vårt signum är en unik inredning, ett trendigt och spännande utbud samt en hög servicenivå. The Crazy Candy Store ska vara en plats där människor möts, upptäcker och upplever något utöver det vanliga.</p>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="cta-banner">
-  <h3>Kom förbi<br/>på <em>Eriksgatan 18</em></h3>
+  <h3>Kom förbi<br/>på <em>Torggatan 20</em></h3>
   <div class="cta-btns"><a class="btn-fill" href="hitta-oss.html">Hitta Hit</a></div>
 </div>
 
@@ -183,7 +229,7 @@ footer{background:rgba(4,0,12,.9);border-top:1px solid rgba(174,61,255,.12);padd
     <li><a href="om-oss.html">Om Oss</a></li>
     <li><a href="hitta-oss.html">Hitta Oss</a></li>
   </ul>
-  <div class="f-copy">© 2026 The Crazy Candy Store · Eriksgatan 18 · Enköping</div>
+  <div class="f-copy">© 2026 The Crazy Candy Store · Torggatan 20 · Enköping</div>
 </footer>
 <script>
 const dot=document.getElementById('dot'),ring=document.getElementById('ring');
