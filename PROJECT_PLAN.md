@@ -81,6 +81,11 @@ questions here.
 | 2026-05-01 | Keep the bottom CTA on `om-oss.html` focused on the store location. | Removed the secondary `Pre-Opening Event` link while keeping `Kom förbi på Torggatan 20` and `Hitta Hit`. |
 | 2026-05-01 | Remove the `5.jpeg` story image from `om-oss.html` and keep that page's story section text-only. | Requested cleanup for the About page; `5.jpeg` still appears on other pages where referenced. |
 | 2026-05-01 | Update `sortiment.html` prices and menu copy for launch-facing accuracy. | Removed the larger lösgodis price styling, added smaller `FRÅN` prefixes, updated Kulglass and Monster Energy pricing, added Läsk, and revised the Asian Noodles description. |
+| 2026-05-01 | Use `Development` as the working and PR target branch. | Feature work branches should be based on `Development`; `main` is updated from `Development` when the live/default GitHub branch needs to refresh. |
+| 2026-05-01 | Keep the `Lösgodis` numeric price aligned with other prices in `sortiment.html`. | Positioned the `/kg` unit as a suffix outside the main `129:–` price width so the numeric price column stays visually consistent. |
+| 2026-05-01 | Update relevant project documents after implementation work. | Record completed implementation context in `PROJECT_PLAN.md`, and update `README.md` or `AGENTS.md` when setup, behavior, workflow, or repository conventions change. |
+| 2026-05-01 | Rename the `Extra` category on `sortiment.html` to `Aktiviteter`. | The free WiFi row is now grouped under a more activity-oriented Swedish label. |
+| 2026-05-01 | Keep emoji category icons on `sortiment.html` and use a running icon for `Aktiviteter`. | Reverted the inline SVG icon experiments, restored the emoji icon style, and changed the activities icon from WiFi to a running person. |
 | TBD | Keep the site as plain HTML/CSS/JavaScript unless a framework or CMS is explicitly requested. | Matches the current project structure and build setup. |
 | TBD | Keep CSS and JavaScript inline until shared asset extraction is planned as a dedicated refactor. | Avoids mixing feature work with broad mechanical changes. |
 
@@ -93,5 +98,7 @@ Use this checklist before marking planned work as Done.
 - [ ] Navigation and shared page behavior are updated consistently across all five pages when relevant.
 - [ ] Images are reasonably sized and include appropriate loading attributes when new media is added.
 - [ ] Generated output such as `dist/` is not included in source changes.
+- [ ] Relevant project documents are updated when the implementation changes
+      behavior, workflow, setup, structure, or launch-readiness context.
 - [ ] `npm run check` has passed when HTML files changed.
 - [ ] `npm run build` has passed when code, content, or build configuration changed.
