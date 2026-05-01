@@ -8,15 +8,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700&family=Bebas+Neue&display=swap');
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --ink:#060010;--ink2:#0c0022;
+  --ink:#060010;--ink2:rgba(12,0,34,.88);
   --pp:#ae3dff;--pp2:#d080ff;
   --pk:#ff1a8c;--pk2:#ff6cbf;
   --wh:#f4eeff;
 }
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--wh);font-family:'Outfit',sans-serif;overflow-x:hidden;cursor:none;min-height:100vh;display:flex;flex-direction:column}
+body{background:var(--ink) url('images/background3.jpeg') center top repeat;color:var(--wh);font-family:'Outfit',sans-serif;overflow-x:hidden;cursor:none;min-height:100vh;display:flex;flex-direction:column}
 #dot{position:fixed;width:9px;height:9px;border-radius:50%;background:var(--pk);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;box-shadow:0 0 12px var(--pk)}
 #ring{position:fixed;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(174,61,255,.5);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .09s,top .09s,width .2s,height .2s,border-color .2s}
+@media(hover:none),(pointer:coarse){
+  body{cursor:auto}
+  #dot,#ring{display:none}
+}
 
 /* NAV */
 nav{position:sticky;top:0;z-index:800;display:flex;align-items:center;justify-content:space-between;padding:.85rem 3rem;background:rgba(6,0,16,.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(174,61,255,.15)}
@@ -31,8 +35,9 @@ nav{position:sticky;top:0;z-index:800;display:flex;align-items:center;justify-co
 .nav-links a.active::after{transform:scaleX(1);background:var(--pk2)}
 .nav-cta{padding:.6rem 1.5rem;background:var(--pk);color:#fff;border:none;border-radius:3px;font-family:'Outfit',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .3s;box-shadow:0 2px 20px rgba(255,26,140,.35)}
 .nav-cta:hover{background:var(--pk2);transform:translateY(-1px);box-shadow:0 6px 28px rgba(255,26,140,.5)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:901}
-.burger span{width:24px;height:2px;background:var(--pp2);display:block;transition:all .3s}
+.burger{display:none;position:relative;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;background:transparent;border:0;border-radius:3px;cursor:pointer;z-index:902;-webkit-tap-highlight-color:transparent}
+.burger:focus-visible{outline:2px solid var(--pk2);outline-offset:3px}
+.burger span{width:24px;height:2px;background:var(--pp2);display:block;flex-shrink:0;transition:all .3s}
 .burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .burger.on span:nth-child(2){opacity:0}
 .burger.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
@@ -50,7 +55,7 @@ nav{position:sticky;top:0;z-index:800;display:flex;align-items:center;justify-co
 .sec-title em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--pp2)}
 
 /* FOOTER */
-footer{background:#04000c;border-top:1px solid rgba(174,61,255,.12);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:auto}
+footer{background:rgba(4,0,12,.9);border-top:1px solid rgba(174,61,255,.12);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:auto}
 .f-logo img{height:6rem;opacity:1;filter:drop-shadow(0 0 8px rgba(174,61,255,.5))}
 .f-nav{display:flex;gap:1.8rem;list-style:none}
 .f-nav a{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,238,255,.3);text-decoration:none;transition:color .2s}
@@ -60,16 +65,19 @@ footer{background:#04000c;border-top:1px solid rgba(174,61,255,.12);padding:2rem
 /* MOBILE */
 @media(max-width:860px){
   nav{padding:.85rem 1.4rem}
-  .nav-links{position:fixed;inset:0;background:rgba(6,0,16,.97);flex-direction:column;justify-content:center;align-items:center;gap:.5rem;display:none;backdrop-filter:blur(20px);z-index:799}
-  .nav-links.open{display:flex}
+  nav.menu-open{position:fixed;inset:0;align-items:flex-start;z-index:1000}
+  nav.menu-open .nav-logo{position:relative;z-index:902}
+  .nav-links{position:absolute;inset:0;background:rgba(6,0,16,.98);flex-direction:column;justify-content:center;align-items:center;gap:.5rem;display:flex;opacity:0;visibility:hidden;pointer-events:none;overflow-y:auto;padding:calc(7rem + env(safe-area-inset-top)) 1.5rem calc(3rem + env(safe-area-inset-bottom));backdrop-filter:blur(20px);z-index:900;transition:opacity .25s ease}
+  .nav-links.open{opacity:1;visibility:visible;pointer-events:auto}
   .nav-links a{font-size:1.1rem;padding:.9rem 2rem}
   .nav-cta{display:none}
   .burger{display:flex}
+  body.nav-open{overflow:hidden}
   footer{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}
 }
 
 .hh{position:relative;height:400px;display:flex;align-items:flex-end;overflow:hidden}
-.hh-bg{position:absolute;inset:0;background:url('images/background3.jpeg') center top;filter:brightness(1) saturate(1.4)}
+.hh-bg{position:absolute;inset:0;background:url('images/background3.jpeg') center top repeat;filter:brightness(1) saturate(1.4)}
 .hh-grad{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 60%,rgba(174,61,255,.22) 0%,transparent 55%),linear-gradient(180deg,rgba(6,0,16,.2) 0%,rgba(6,0,16,.85) 75%,rgba(6,0,16,1) 100%)}
 .hh-inner{position:relative;z-index:2;padding:3rem 3.5rem;display:grid;grid-template-columns:1fr auto;align-items:flex-end;width:100%;gap:2rem}
 .hh-addr{font-family:'Anton',sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:.88;text-transform:uppercase;color:#fff}
@@ -123,13 +131,13 @@ footer{background:#04000c;border-top:1px solid rgba(174,61,255,.12);padding:2rem
 
 <nav>
   <a class="nav-logo" href="index.html"><img src="images/logo-transparent-png.png" alt="The Crazy Candy Store"/></a>
-  <ul class="nav-links" id="nav-links"><li><a href="index.html"  onclick="closeNav()">Hem</a></li>
-<li><a href="sortiment.html"  onclick="closeNav()">Sortiment</a></li>
-<li><a href="event.html"  onclick="closeNav()">Pre-Opening</a></li>
-<li><a href="om-oss.html"  onclick="closeNav()">Om Oss</a></li>
-<li><a href="hitta-oss.html" class="active" onclick="closeNav()">Hitta Oss</a></li></ul>
+  <ul class="nav-links" id="nav-links"><li><a href="index.html">Hem</a></li>
+<li><a href="sortiment.html">Sortiment</a></li>
+<li><a href="event.html">Pre-Opening</a></li>
+<li><a href="om-oss.html">Om Oss</a></li>
+<li><a href="hitta-oss.html" class="active">Hitta Oss</a></li></ul>
   <a class="nav-cta" href="event.html">Pre-Opening 6 Juni ✦</a>
-  <div class="burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  <button class="burger" type="button" aria-label="Öppna meny" aria-controls="nav-links" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="hh">
@@ -202,8 +210,23 @@ const dot=document.getElementById('dot'),ring=document.getElementById('ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
 (function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
-function toggleNav(){document.querySelector('.burger').classList.toggle('on');document.querySelector('.nav-links').classList.toggle('open')}
-function closeNav(){document.querySelector('.burger').classList.remove('on');document.querySelector('.nav-links').classList.remove('open')}
+const nav=document.querySelector('nav');
+const navToggle=document.querySelector('.burger');
+const navLinks=document.querySelector('.nav-links');
+function setNav(open){
+  nav.classList.toggle('menu-open',open);
+  navToggle.classList.toggle('on',open);
+  navLinks.classList.toggle('open',open);
+  navToggle.setAttribute('aria-expanded',open?'true':'false');
+  navToggle.setAttribute('aria-label',open?'Stäng meny':'Öppna meny');
+  document.body.classList.toggle('nav-open',open);
+}
+function toggleNav(){setNav(!navLinks.classList.contains('open'))}
+function closeNav(){setNav(false)}
+navToggle.addEventListener('click',toggleNav);
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeNav));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navLinks.classList.contains('open'))closeNav()});
+window.addEventListener('resize',()=>{if(window.innerWidth>860&&navLinks.classList.contains('open'))closeNav()});
 </script>
 </body>
 </html>
