@@ -77,6 +77,7 @@ questions here.
 
 | Date | Decision | Context |
 | --- | --- | --- |
+| 2026-05-01 | Add founder vision content to `om-oss.html` as part of the existing values section. | Requested copy came from `vision.md`; photo placeholders were omitted until real founder or vision assets exist. |
 | 2026-05-01 | Keep the bottom CTA on `om-oss.html` focused on the store location. | Removed the secondary `Pre-Opening Event` link while keeping `Kom förbi på Torggatan 20` and `Hitta Hit`. |
 | 2026-05-01 | Remove the `5.jpeg` story image from `om-oss.html` and keep that page's story section text-only. | Requested cleanup for the About page; `5.jpeg` still appears on other pages where referenced. |
 | TBD | Keep the site as plain HTML/CSS/JavaScript unless a framework or CMS is explicitly requested. | Matches the current project structure and build setup. |
