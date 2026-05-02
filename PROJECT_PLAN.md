@@ -77,6 +77,15 @@ questions here.
 
 | Date | Decision | Context |
 | --- | --- | --- |
+| 2026-05-02 | Remove footer navigation menus from all pages. | `sortiment.html`, `event.html`, `om-oss.html`, and `hitta-oss.html` now match the `index.html` footer with only the logo and store/location copyright line. |
+| 2026-05-02 | Show the `1.jpeg` event poster at normal brightness. | Removed the dark overlay from the poster image area on `event.html` while keeping the shared page background treatment. |
+| 2026-05-02 | Remove the `Kom in & häng med oss` intro panel from `om-oss.html`. | The About page intro now uses a single content panel for the store story instead of the left text-only hero panel. |
+| 2026-05-02 | Show `Öppettider` before feature cards on `hitta-oss.html`. | The contact/opening-hours section now spans above the `Gratis WiFi` and product feature cards, preserving the intended reading order on desktop and mobile. |
+| 2026-05-02 | Remove the `6.jpeg` image block from `hitta-oss.html` and make the distance callout opaque. | The `25 Meter Bort` callout now uses a non-transparent background while the page keeps the shared darkened background system. |
+| 2026-05-02 | Apply the homepage background system to all pages. | `sortiment.html`, `event.html`, `om-oss.html`, and `hitta-oss.html` now use the same fixed darkened background image layer, opaque navigation, and 30% transparent surfaces as `index.html`. |
+| 2026-05-02 | Darken the homepage background image by 50%. | `index.html` uses a fixed body pseudo-layer with `filter:brightness(.5)` so only the background image darkens, not text or content surfaces. |
+| 2026-05-02 | Make the homepage menu opaque and content surfaces 30% transparent. | `index.html` keeps text at full opacity by using semi-transparent background colors on objects instead of parent opacity. |
+| 2026-05-02 | Use one full-page background image on `index.html`. | The homepage now uses `images/background3.jpeg` on the body as the single covering background, with major page sections made transparent so the image shows through. |
 | 2026-05-02 | Remove the duplicate footer menu from `index.html`. | The homepage now keeps navigation in the top menu only; the footer retains the logo and store/location copyright line. |
 | 2026-05-02 | Remove the bottom `5.jpeg` image from `index.html`. | The homepage intro section now stays text-only instead of showing the lower store mood image, with its remaining inline styles moved into CSS classes. |
 | 2026-05-02 | Enlarge the homepage spinning hero logo and remove its `Est. 2026` caption. | The right-side hero badge on `index.html` now uses the logo as the only badge element, sized 50% larger to make the brand mark more prominent. |
