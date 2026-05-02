@@ -48,11 +48,21 @@ Use `npm run format:check` only when formatting is relevant. Do not run
 
 - Preserve the existing visual direction unless the user asks for a redesign.
 - Keep Swedish copy consistent across all five pages.
+- Keep the shared background treatment synchronized across all five pages:
+  `images/background3.jpeg` on `body::before`, `filter:brightness(.5)`, opaque
+  top navigation, and semi-transparent content surfaces that do not reduce text
+  opacity.
+- Keep footers consistent across all five pages: logo plus the store/location
+  copyright line only, with no footer navigation menu.
 - Confirm the intended event time before changing `Kl 11 EM`; it currently reads
   as 11 PM in Swedish usage.
 - If updating navigation, apply the change to every page.
 - If updating shared styles or scripts, search all HTML files first and keep the
   duplicated blocks in sync.
+- Preserve current page-specific layout decisions unless asked otherwise:
+  `event.html` shows `1.jpeg` at normal brightness, `hitta-oss.html` shows
+  `Öppettider` before feature cards and does not include `6.jpeg`, and
+  `om-oss.html` omits the former `Kom in & häng med oss` intro panel.
 - Prefer accessible native controls for interactive elements, especially the
   mobile menu trigger.
 - Avoid adding large unoptimized media. If new images are needed, add reasonable
