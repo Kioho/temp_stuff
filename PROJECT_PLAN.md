@@ -77,6 +77,7 @@ questions here.
 
 | Date | Decision | Context |
 | --- | --- | --- |
+| 2026-05-02 | Enlarge the homepage spinning hero logo and remove its `Est. 2026` caption. | The right-side hero badge on `index.html` now uses the logo as the only badge element, sized 50% larger to make the brand mark more prominent. |
 | 2026-05-01 | Add Biljard pricing to the `Aktiviteter` category on `sortiment.html`. | The activity list now shows `3:-/min | 180:-/tim`; unit labels use the body font at full price size so they stay lowercase. |
 | 2026-05-01 | Use explicit emoji font fallbacks for `sortiment.html` category icons. | Chromium needed an available color emoji font to render the existing emoji icons reliably. |
 | 2026-05-01 | Add founder vision content to `om-oss.html` as part of the existing values section. | Requested copy came from `vision.md`; photo placeholders were omitted until real founder or vision assets exist. |
