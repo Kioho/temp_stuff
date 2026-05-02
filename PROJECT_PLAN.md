@@ -77,6 +77,8 @@ questions here.
 
 | Date | Decision | Context |
 | --- | --- | --- |
+| 2026-05-02 | Remove the duplicate footer menu from `index.html`. | The homepage now keeps navigation in the top menu only; the footer retains the logo and store/location copyright line. |
+| 2026-05-02 | Remove the bottom `5.jpeg` image from `index.html`. | The homepage intro section now stays text-only instead of showing the lower store mood image, with its remaining inline styles moved into CSS classes. |
 | 2026-05-02 | Enlarge the homepage spinning hero logo and remove its `Est. 2026` caption. | The right-side hero badge on `index.html` now uses the logo as the only badge element, sized 50% larger to make the brand mark more prominent. |
 | 2026-05-01 | Add Biljard pricing to the `Aktiviteter` category on `sortiment.html`. | The activity list now shows `3:-/min | 180:-/tim`; unit labels use the body font at full price size so they stay lowercase. |
 | 2026-05-01 | Use explicit emoji font fallbacks for `sortiment.html` category icons. | Chromium needed an available color emoji font to render the existing emoji icons reliably. |
