@@ -77,6 +77,8 @@ questions here.
 
 | Date | Decision | Context |
 | --- | --- | --- |
+| 2026-05-01 | Add Biljard pricing to the `Aktiviteter` category on `sortiment.html`. | The activity list now shows `3:-/min | 180:-/tim`; unit labels use the body font at full price size so they stay lowercase. |
+| 2026-05-01 | Use explicit emoji font fallbacks for `sortiment.html` category icons. | Chromium needed an available color emoji font to render the existing emoji icons reliably. |
 | 2026-05-01 | Add founder vision content to `om-oss.html` as part of the existing values section. | Requested copy came from `vision.md`; photo placeholders were omitted until real founder or vision assets exist. |
 | 2026-05-01 | Keep the bottom CTA on `om-oss.html` focused on the store location. | Removed the secondary `Pre-Opening Event` link while keeping `Kom förbi på Torggatan 20` and `Hitta Hit`. |
 | 2026-05-01 | Remove the `5.jpeg` story image from `om-oss.html` and keep that page's story section text-only. | Requested cleanup for the About page; `5.jpeg` still appears on other pages where referenced. |
