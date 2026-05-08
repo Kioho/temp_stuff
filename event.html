@@ -41,7 +41,8 @@ nav{position:sticky;top:0;z-index:800;display:flex;align-items:center;justify-co
 .nav-links a.active::after{transform:scaleX(1);background:var(--surface-pink2)}
 .nav-cta{padding:.6rem 1.5rem;background:var(--surface-pink);color:#fff;border:none;border-radius:3px;font-family:'Outfit',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .3s;box-shadow:0 2px 20px rgba(255,26,140,.35)}
 .nav-cta:hover{background:var(--surface-pink2);transform:translateY(-1px);box-shadow:0 6px 28px rgba(255,26,140,.5)}
-.burger{display:none;position:relative;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:0;border-radius:3px;cursor:pointer;z-index:902;-webkit-tap-highlight-color:transparent}
+.burger{display:none;position:relative;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:0;border-radius:3px;background:transparent;box-shadow:none;appearance:none;-webkit-appearance:none;cursor:pointer;z-index:902;-webkit-tap-highlight-color:transparent}
+.burger,.burger:hover,.burger:active,.burger:focus{background:transparent;box-shadow:none}
 .burger:focus-visible{outline:2px solid var(--pk2);outline-offset:3px}
 .burger span{width:24px;height:2px;background:var(--surface-purple2);display:block;flex-shrink:0;transition:all .3s}
 .burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -131,18 +132,18 @@ footer{background:var(--surface);border-top:1px solid rgba(174,61,255,.12);paddi
 
 <section class="ev-hero">
   <div class="ev-inner">
-    <div class="ev-kicker">Friends &amp; Family · Happy Hour</div>
+    <div class="ev-kicker">Pre-Opening Event</div>
     <h1 class="ev-title">Pre&#8209;<span class="ol">Opening</span>Event</h1>
     <div class="date-block">
-      <div class="db-item"><div class="db-lbl">Datum</div><div class="db-val">Lördag<br/>6 Juni</div></div>
+      <div class="db-item"><div class="db-lbl">Datum</div><div class="db-val">1a Juli,<br/>2026</div></div>
       <div class="db-div"></div>
-      <div class="db-item"><div class="db-lbl">Tid</div><div class="db-val">Kl<br/>11 EM</div></div>
+      <div class="db-item"><div class="db-lbl">Tid</div><div class="db-val">Kl<br/>11 AM</div></div>
       <div class="db-div"></div>
-      <div class="db-item"><div class="db-lbl">Special</div><div class="db-val">Gratis<br/>Dryck</div></div>
+      <div class="db-item"><div class="db-lbl">Special</div><div class="db-val">Special<br/>Priser</div></div>
     </div>
-    <p class="ev-desc">Fira öppningen med oss – vänner och familj välkomna till en kväll med gratis dricka, massor av godis och en riktigt crazy stämning!</p>
+    <p class="ev-desc">Fira öppningen med oss – vänner och familj välkomna till en kväll med special priser, massor av godis och en riktigt crazy stämning!</p>
     <div class="tags">
-      <span class="etag">Gratis Dryck</span><span class="etag">Lösgodis</span><span class="etag">Kulglass</span><span class="etag">Slush</span><span class="etag">Gratis WiFi</span>
+      <span class="etag">Special Priser</span><span class="etag">Lösgodis</span><span class="etag">Kulglass</span><span class="etag">Slush</span><span class="etag">Gratis WiFi</span>
     </div>
     <div class="ev-actions">
       <a class="btn-fill" href="hitta-oss.html">Hitta Hit</a>
@@ -152,12 +153,12 @@ footer{background:var(--surface);border-top:1px solid rgba(174,61,255,.12);paddi
 </section>
 <div class="detail-section">
   <div class="ds-left">
-    <div><div class="sec-tag">Eventinfo</div><h2 class="sec-title" style="font-size:clamp(2rem,4vw,3.2rem);margin-top:.7rem">Vad händer<br/><em>den 6 Juni?</em></h2></div>
+    <div><div class="sec-tag">Eventinfo</div><h2 class="sec-title" style="font-size:clamp(2rem,4vw,3.2rem);margin-top:.7rem">Vad händer<br/><em>den 1a Juli, 2026?</em></h2></div>
     <div class="info-list">
-      <div class="ir"><span class="ir-ico">📅</span><div class="ir-body"><div class="ir-lbl">När</div><div class="ir-val">Lördag 6 Juni 2026</div><div class="ir-sub">Eventet startar kl 11 EM</div></div></div>
+      <div class="ir"><span class="ir-ico">📅</span><div class="ir-body"><div class="ir-lbl">När</div><div class="ir-val">1a Juli, 2026</div><div class="ir-sub">Eventet startar kl 11 AM</div></div></div>
       <div class="ir"><span class="ir-ico">📍</span><div class="ir-body"><div class="ir-lbl">Var</div><div class="ir-val">Torggatan 20, Enköping</div><div class="ir-sub">Bara 25 meter bort – följ skylten!</div></div></div>
-      <div class="ir"><span class="ir-ico">🥤</span><div class="ir-body"><div class="ir-lbl">Erbjudande</div><div class="ir-val">Gratis dryck till alla gäster</div><div class="ir-sub">Friends &amp; Family Happy Hour</div></div></div>
-      <div class="ir"><span class="ir-ico">🛍️</span><div class="ir-body"><div class="ir-lbl">Grand Opening</div><div class="ir-val">6 Juni 2026</div><div class="ir-sub">Officiell öppning för alla!</div></div></div>
+      <div class="ir"><span class="ir-ico">🥤</span><div class="ir-body"><div class="ir-lbl">Erbjudande</div><div class="ir-val">Special Priser till alla gäster</div><div class="ir-sub">Pre-Opening Event</div></div></div>
+      <div class="ir"><span class="ir-ico">🛍️</span><div class="ir-body"><div class="ir-lbl">Grand Opening</div><div class="ir-val">1a Juli, 2026</div><div class="ir-sub">Officiell öppning för alla!</div></div></div>
     </div>
     <a class="btn-fill" href="hitta-oss.html">Se Adress &amp; Öppettider →</a>
   </div>
