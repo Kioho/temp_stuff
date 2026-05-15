@@ -86,6 +86,11 @@ pages creates a large mechanical diff, so apply it intentionally.
 - Page content uses semi-transparent surface colors so text remains fully
   opaque while the shared background image shows through.
 - The top navigation bar is opaque on every page.
+- Opening and pre-opening content uses `1a Juli, 2026`, `Kl 11 AM`, and
+  `Special Priser`; the former Friends & Family / Happy Hour event branding is
+  no longer visible.
+- The mobile hamburger button is a native button with transparent default,
+  hover, active, and focus backgrounds while keeping the keyboard focus outline.
 - Footers are intentionally simplified on every page: logo plus the
   store/location copyright line, with no footer navigation menu.
 - `event.html` shows `images/1.jpeg` at normal brightness in the event detail

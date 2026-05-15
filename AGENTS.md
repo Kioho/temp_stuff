@@ -54,8 +54,8 @@ Use `npm run format:check` only when formatting is relevant. Do not run
   opacity.
 - Keep footers consistent across all five pages: logo plus the store/location
   copyright line only, with no footer navigation menu.
-- Confirm the intended event time before changing `Kl 11 EM`; it currently reads
-  as 11 PM in Swedish usage.
+- Preserve the confirmed event time `Kl 11 AM` across visible event labels unless
+  the user explicitly asks to change it.
 - If updating navigation, apply the change to every page.
 - If updating shared styles or scripts, search all HTML files first and keep the
   duplicated blocks in sync.

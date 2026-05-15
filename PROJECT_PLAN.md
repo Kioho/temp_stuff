@@ -26,7 +26,7 @@ focused change, and update statuses as work moves forward.
 | --- | --- | --- | --- | --- | --- |
 | High | Fix mobile overflow and clipping | Planned | TBD | Pre-launch | Review fixed-width content and `overflow-x:hidden` usage across pages. |
 | High | Improve mobile menu accessibility | Planned | TBD | Pre-launch | Use accessible native controls and keep ARIA state in sync. |
-| Medium | Confirm event time wording | Blocked | TBD | Pre-launch | Confirm whether `Kl 11 EM` should mean 11 PM or a different time. |
+| Medium | Confirm event time wording | Done | Codex | 2026-05-08 | Plan confirmed `Kl 11 AM`; visible labels were updated. |
 | Medium | Review root `files.zip` exposure | Planned | TBD | Pre-launch | Decide whether this file should be removed or excluded from deployment. |
 
 ## Backlog
@@ -35,7 +35,7 @@ focused change, and update statuses as work moves forward.
 | --- | --- | --- | --- | --- |
 | High | Fix mobile overflow and clipping | Planned | TBD | Check all five HTML pages for content that can exceed the viewport. |
 | High | Improve mobile menu accessibility | Planned | TBD | Ensure keyboard access, focus behavior, labels, and expanded state are correct. |
-| Medium | Confirm event time wording | Blocked | TBD | Swedish `Kl 11 EM` reads as 11 PM; confirm intended event time before editing copy. |
+| Medium | Confirm event time wording | Done | Codex | Visible event time labels now use `Kl 11 AM`. |
 | Medium | Review custom cursor behavior | Idea | TBD | Disable or adapt custom cursor behavior on touch devices and before first mouse movement. |
 | Medium | Optimize oversized image assets | Idea | TBD | Resize or compress large logo and JPEG assets used at smaller rendered dimensions. |
 | Medium | Review root `files.zip` exposure | Planned | TBD | Avoid deploying the repository root if this file is not meant to be public. |
@@ -77,6 +77,9 @@ questions here.
 
 | Date | Decision | Context |
 | --- | --- | --- |
+| 2026-05-08 | Remove the plush, keyring, and doll assortment sentence from `om-oss.html`. | The About page keeps the USA/Asia candy assortment copy but no longer mentions gosedjur, nyckelringar, or dockor. |
+| 2026-05-08 | Remove the side-panel images from `sortiment.html`. | The Sortiment page no longer displays `images/6.jpeg` or `images/5.jpeg`; the note blocks and `Hitta Hit` CTA remain in place. |
+| 2026-05-08 | Update launch-facing event copy for the new pre-opening details. | All five HTML pages now use `1a Juli, 2026`; visible time labels use `Kl 11 AM`; offer text uses `Special Priser`; Friends & Family / Happy Hour branding was removed; `sortiment.html` uses `Gott bryggkaffe` for coffee and stacks the Biljard per-minute/per-hour price. |
 | 2026-05-02 | Remove footer navigation menus from all pages. | `sortiment.html`, `event.html`, `om-oss.html`, and `hitta-oss.html` now match the `index.html` footer with only the logo and store/location copyright line. |
 | 2026-05-02 | Show the `1.jpeg` event poster at normal brightness. | Removed the dark overlay from the poster image area on `event.html` while keeping the shared page background treatment. |
 | 2026-05-02 | Remove the `Kom in & häng med oss` intro panel from `om-oss.html`. | The About page intro now uses a single content panel for the store story instead of the left text-only hero panel. |
